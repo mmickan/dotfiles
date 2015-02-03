@@ -57,3 +57,49 @@ define $1(\$$5) {
 
 }
 endsnippet
+
+snippet profile
+#
+# == Class: profile::${1:`!p snip.rv = snip.fn.replace(".pp", "")`}
+#
+# ${2:Full description of class.}
+#
+# === Parameters
+#
+# Profile classes do not take parameters.
+#
+# === Example usage
+#
+# The class should only be used by a role class:
+#
+#  include profile::$1
+#
+class profile::$1 {
+
+  $0
+
+}
+endsnippet
+
+snippet role
+#
+# == Class: role::${1:`!p snip.rv = snip.fn.replace(".pp", "")`}
+#
+# ${2:Full description of class.}
+#
+# === Parameters
+#
+# Role classes do not take parameters.
+#
+# === Example usage
+#
+#  node 'myserver' {
+#    include role::$1
+#  }
+#
+class role::$1 inherits role {
+
+  $0
+
+}
+endsnippet
